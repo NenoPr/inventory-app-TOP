@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+  h1= title
+
+  ul
+    each platform in platform_list
+      li
+        a(href=platform.url) #{platform.name}
+        div Developed by: #{platform.developer}
+        div Released:  #{platform.released_date_formatted}
+
+    else
+      li There are no platforms.

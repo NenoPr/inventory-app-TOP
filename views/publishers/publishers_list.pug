@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  h1= title
+
+  ul
+    each publisher in publishers_list
+      li
+        a(href=publisher.url) #{publisher.name}
+        div Founded: 
+            if  publisher.founded
+                span #{publisher.date_founded_formatted}
+            else 
+                span No Data
+
+    else
+      li There are no publishers.

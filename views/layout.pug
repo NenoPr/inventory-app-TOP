@@ -1,0 +1,40 @@
+doctype html
+html(lang='en')
+  head
+    title= title
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    div(class='main-container')
+      div(class='content-container')
+        div(class='sidebar-container')
+          block sidebar
+            ul(class='sidebar-nav')
+              li
+                a(href='/games') Home
+              li
+                a(href='/games/games_list') All games
+              li
+                a(href='/developers/developers_list') All Developers
+              li
+                a(href='/publishers/publishers_list') All Publishers
+              li
+                a(href='/genres/genres_list') All Genres
+              li
+                a(href='/platforms/platforms_list') All Platforms
+              li
+                hr
+              li
+                a(href='/games/create') Add new Game
+              li
+                a(href='/developers/create') Add new Developer
+              li
+                a(href='/publishers/create') Add new Publisher
+              li
+                a(href='/genres/create') Add new Genre
+              li
+                a(href='/platforms/create') Add new Platform
+
+        div(class='main-content-container')
+          block content

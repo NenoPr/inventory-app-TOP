@@ -1,0 +1,50 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.content-container {
+  display: flex;
+}
+
+.sidebar-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  width: fit-content;
+}
+
+.main-content-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  flex: 1;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  margin-bottom: .25rem;
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: #00B7FF;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
