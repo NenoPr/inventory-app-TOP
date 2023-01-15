@@ -36,3 +36,17 @@ exports.platforms_list = function (req, res, next) {
       });
     });
 };
+
+// Display platform create form on GET.
+exports.platforms_create_get = (req, res, next) => {
+  res.render("platforms/platform_form", {
+    title: "Add a New Platform",
+  });
+};
+
+// Platform create POST.
+exports.platforms_create_post = (req, res, next) => {
+  res.render("platforms/platform_form", {
+    title: "Add a New Platform",
+  });
+};

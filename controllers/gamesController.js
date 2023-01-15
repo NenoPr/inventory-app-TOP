@@ -47,6 +47,46 @@ exports.game_list = function (req, res, next) {
         return next(err);
       }
       //Successful, so render
-      res.render("games/games_list", { title: "Game List", game_list: list_games });
+      res.render("games/games_list", {
+        title: "Game List",
+        game_list: list_games,
+      });
     });
+};
+
+// Display game create form on GET.
+exports.game_create_get = (req, res, next) => {
+  async.parallel(
+    {
+      genres(callback) {
+        Genre.find(callback);
+      },
+      developers(callback) {
+        Developer.find(callback);
+      },
+      publishers(callback) {
+        Publisher.find(callback);
+      },
+      platforms(callback) {
+        Platform.find(callback);
+      },
+    },
+    (err, results) => {
+      if (err) {
+        return next(err);
+      }
+      res.render("games/game_form", {
+        title: "Add a New Game",
+        genres: results.genres,
+        developers: results.developers,
+        publishers: results.publishers,
+        platforms: results.platforms,
+      });
+    }
+  );
+};
+
+// Display game create form on Post.
+exports.game_create_post = (req, res, next) => {
+
 };

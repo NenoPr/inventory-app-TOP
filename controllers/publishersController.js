@@ -36,3 +36,17 @@ exports.publishers_list = function (req, res, next) {
       });
     });
 };
+
+// Display publisher create form on GET.
+exports.publishers_create_get = (req, res, next) => {
+  res.render("publishers/publisher_form", {
+    title: "Create a New Publisher",
+  });
+};
+
+// Publisher create POST.
+exports.publishers_create_post = (req, res, next) => {
+  res.render("publishers/publisher_form", {
+    title: "Create a New Publisher",
+  });
+};

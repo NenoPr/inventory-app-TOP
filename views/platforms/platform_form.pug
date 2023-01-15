@@ -1,0 +1,20 @@
+extends ../layout
+
+block content
+  h1= title
+  form(method='POST' action='')
+    div.form-group
+      label(for='name') Name:
+      input#title.form-control(type='text', placeholder='Platform Name' name='title' required='true' value=(undefined===platform ? '' : platform.name) )
+    div.form-group
+      label(for='founded') Developer:
+      input#title.form-control(type='text', placeholder='Developer name' name='title' value=(undefined===platform ? '' : platform.developer) )
+    div.form-group
+      label(for='founded') Released:
+      input#title.form-control(type='date', placeholder='Date Founded' name='title' value=(undefined===platform ? '' : platform.released) )
+    button.btn.btn-primary(type='submit') Submit
+
+  if errors
+    ul
+      for error in errors
+        li!= error.msg

@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  h1= title
+  form(method='POST' action='')
+    div.form-group
+      label(for='name') Name:
+      input#title.form-control(type='text', placeholder='Name of the Publisher' name='title' required='true' value=(undefined===publisher ? '' : publisher.name) )
+    div.form-group
+      label(for='founded') Founded:
+      input#title.form-control(type='date', placeholder='Date Founded' name='title' value=(undefined===publisher ? '' : publisher.founded) )
+    button.btn.btn-primary(type='submit') Submit
+
+  if errors
+    ul
+      for error in errors
+        li!= error.msg

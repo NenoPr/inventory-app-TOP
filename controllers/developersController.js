@@ -23,7 +23,7 @@ exports.developers_index = (req, res) => {
 
 // Display list of all Games.
 exports.developers_list = function (req, res, next) {
-    Developer.find({}, "name founded")
+  Developer.find({}, "name founded")
     .sort({ title: 1 })
     .exec(function (err, list_developers) {
       if (err) {
@@ -35,4 +35,18 @@ exports.developers_list = function (req, res, next) {
         developers_list: list_developers,
       });
     });
+};
+
+// Display developer create form on GET.
+exports.developers_create_get = (req, res, next) => {
+  res.render("developers/developer_form", {
+    title: "Create a New Developer",
+  });
+};
+
+// Developer create POST.
+exports.developers_create_post = (req, res, next) => {
+  res.render("developers/developer_form", {
+    title: "Create a New Developer",
+  });
 };

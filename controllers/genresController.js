@@ -36,3 +36,17 @@ exports.genres_list = function (req, res, next) {
       });
     });
 };
+
+// Display genre create form on GET.
+exports.genre_create_get = (req, res, next) => {
+  res.render("genre/genre_form", {
+    title: "Create a New Genre",
+  });
+};
+
+// Genre create POST.
+exports.genre_create_post = (req, res, next) => {
+  res.render("genre/genre_form", {
+    title: "Create a New Genre",
+  });
+};
